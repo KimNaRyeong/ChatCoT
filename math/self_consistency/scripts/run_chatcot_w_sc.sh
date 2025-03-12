@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DATA_SPLIT=counting_and_probability
 RESULT_FOLDER=result/math_cp
 NUMBER_PER_PROCESS=100
@@ -8,7 +10,7 @@ for ((i=1;i<=5;i++)) do
 {
 	startidx=$(((i-1)*NUMBER_PER_PROCESS+1+60))
 	endidx=$((i*NUMBER_PER_PROCESS))
-	python chatcot_w_sc.py \
+	echo python chatcot_w_sc.py \
 		--result_path $RESULT_FOLDER/w_sc/turbo-w_sc-5shot-$startidx-$endidx.json \
 		--start_prob $startidx \
 		--end_prob $endidx \
