@@ -2,6 +2,7 @@ import json, re
 from sympy.parsing.latex import parse_latex
 import sympy
 import multiprocessing
+from tqdm import tqdm
 
 def my_N(expr):
     result = sympy.N(expr)
@@ -184,6 +185,8 @@ def get_reasoning_paths_and_args(reasoning_paths, k):
 
 
 def main():
+    # result_file = "./result/math_nt/chatcot_w_sc/turbo-w_sc-5shot_fixed_wo_one.json"
+    # result_file = "./result/math_cp/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
     result_file = "./result/math_nt/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
     # result_file = "./result/math_cp/chatcot_w_sc/test.json"
 
@@ -191,14 +194,18 @@ def main():
         content = json.load(rf)
 
     reasoning_paths_dict = dict()
-    ks = range(1, 10) # max_hop = 8 + answer
+    # ks = range(1, 10) # max_hop = 8 + answer
     # ks = [2]
-    # ks = [9]
+    ks = [9]
+
+    arg_set_len_dict = dict()
+    for i in range(1, 48):
+        arg_set_len_dict[i] = 0
 
     max_arg_len = 0
     for k in ks:
         reasoning_paths_dict[k] = []
-        for problem_and_answer in content:
+        for problem_and_answer in tqdm(content):
             # print("---")
             # print(problem_and_answer["problem"])
             reasoning_paths = problem_and_answer["chat_and_reason"]
@@ -206,14 +213,16 @@ def main():
 
             if False in arg_set:
                 arg_set.remove(False)
-                arg_list = list(arg_set)
-                arg_list.append(False)
-            else:
-                arg_list = list(arg_set)
+            arg_list = list(arg_set)
 
             arg_len = len(arg_list)
+            
+            
+            arg_set_len_dict[arg_len] += 1
+
             if arg_len > max_arg_len:
                 max_arg_len = arg_len
+                max_arg_problem = problem_and_answer["problem"]
             
             for rp in processed_reasoning_paths:
                 if 'answer' in rp[-1].keys() and 'answer' == None:
@@ -224,13 +233,19 @@ def main():
             reasoning_paths_dict[k].append({"problem": problem_and_answer["problem"], "reasoning_paths": processed_reasoning_paths, "arguments_set": arg_list, "score": score})
     
     print(f"Max argument length: {max_arg_len}")
+    print(max_arg_problem)
+    for key in sorted(arg_set_len_dict.keys()):
+        print(key, arg_set_len_dict[key])
+
+    
 
             
     
-    reasoning_paths_file = './math_nt_reasoning_paths.json'
+    # reasoning_paths_file = './math_cp_reasoning_paths.json'
+    # reasoning_paths_file = './math_nt_reasoning_paths.json'
 
-    with open(reasoning_paths_file, 'w') as wf:
-        json.dump(reasoning_paths_dict, wf, indent=4)
+    # with open(reasoning_paths_file, 'w') as wf:
+    #     json.dump(reasoning_paths_dict, wf, indent=4)
     
 
 
