@@ -1,0 +1,128 @@
+F
+k=1
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.5024
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=2
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.5145
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=3
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.4959
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=4
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.4675
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=5
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.4592
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=6
+Best_mean_accuracy: 0.7411
+Best mean_roc_auc: 0.4919
+Best mean_precision: 0.1500
+Best mean_recall: 0.0105
+Best mean_npv: 0.7410
+Best mean_specificity: 0.9986
+k=7
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.4928
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=8
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.4903
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=9
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.5086
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+FA
+k=1
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.5279
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=2
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.5730
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=3
+Best_mean_accuracy: 0.7411
+Best mean_roc_auc: 0.6368
+Best mean_precision: 0.1333
+Best mean_recall: 0.0178
+Best mean_npv: 0.7418
+Best mean_specificity: 0.9974
+k=4
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.6318
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=5
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.6214
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=6
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.6248
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=7
+Best_mean_accuracy: 0.7411
+Best mean_roc_auc: 0.6615
+Best mean_precision: 0.4123
+Best mean_recall: 0.1026
+Best mean_npv: 0.7536
+Best mean_specificity: 0.9638
+k=8
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.6511
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000
+k=9
+Best_mean_accuracy: 0.7391
+Best mean_roc_auc: 0.6040
+Best mean_precision: 0.0000
+Best mean_recall: 0.0000
+Best mean_npv: 0.7391
+Best mean_specificity: 1.0000

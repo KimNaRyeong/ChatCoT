@@ -10,6 +10,8 @@ def generate_one_LIM(reasoning_paths, whole_arg_list, k):
         FA_path = []
 
         for rs in rp:
+            if len(F_path) >= int(k):
+                break
             if "function_call" in rs.keys():
                 if rs["function_call"] == "Calculator":
                     func_vector = torch.tensor([1, 0, 0], dtype = torch.float)
@@ -73,7 +75,7 @@ def main():
             # print(len(math_cp_reasoning_path_dict[k]))
             # print(len(math_nt_reasoning_path_dict[k]))
             # print(len(math_cp_reasoning_path_dict[k]+ math_nt_reasoning_path_dict[k]))
-            reasoning_path_for_k = math_cp_reasoning_path_dict[k]+ math_nt_reasoning_path_dict[k]
+            reasoning_path_for_k = math_cp_reasoning_path_dict['9']+ math_nt_reasoning_path_dict['9']
         for data_for_one_problem in reasoning_path_for_k:
             if len(data_for_one_problem["arguments_set"]) < 20:
                 F_paths, FA_paths = generate_one_LIM(data_for_one_problem["reasoning_paths"], data_for_one_problem["arguments_set"], k)
