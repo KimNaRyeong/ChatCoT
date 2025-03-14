@@ -110,7 +110,7 @@ def main():
         math_nt_reasoning_path_dict = json.load(rf)
     
     ks = math_cp_reasoning_path_dict.keys()
-    # ks = ['5', '9']
+    # ks = ['9']
     for k in ks:
         dataset_for_k_S = []
         dataset_for_k_F = []
@@ -120,7 +120,7 @@ def main():
             # print(len(math_cp_reasoning_path_dict[k]))
             # print(len(math_nt_reasoning_path_dict[k]))
             # print(len(math_cp_reasoning_path_dict[k]+ math_nt_reasoning_path_dict[k]))
-            reasoning_path_for_k = math_cp_reasoning_path_dict[k]+ math_nt_reasoning_path_dict[k]
+            reasoning_path_for_k = math_cp_reasoning_path_dict['9']+ math_nt_reasoning_path_dict['9']
         for data_for_one_problem in reasoning_path_for_k:
             if len(data_for_one_problem["arguments_set"]) < 20:
                 S_data, F_data, FA_data = generate_one_LIG(data_for_one_problem["reasoning_paths"], data_for_one_problem["arguments_set"], data_for_one_problem["score"], k)
