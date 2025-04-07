@@ -138,10 +138,15 @@ def get_reasoning_paths_and_args(reasoning_paths, k):
                 arg_set.add(answer)
                 break
 
-            if ('the answer is' in rs["content"].lower()):
+            if ('the answer is' in rs["content"]):
                 answer = rs["content"].split('the answer is')[-1].strip()
+                # print(answer)
+                # print('-'*50)
+                # print(rs["content"])
+                # print('='*50)
                 rp.append({"answer": answer})
                 arg_set.add(answer)
+                
                 break
             
 
@@ -186,8 +191,8 @@ def get_reasoning_paths_and_args(reasoning_paths, k):
 
 def main():
     # result_file = "./result/math_nt/chatcot_w_sc/turbo-w_sc-5shot_fixed_wo_one.json"
-    # result_file = "./result/math_cp/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
-    result_file = "./result/math_nt/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
+    result_file = "./result/math_cp/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
+    # result_file = "./result/math_nt/chatcot_w_sc/turbo-w_sc-5shot_fixed.json"
     # result_file = "./result/math_cp/chatcot_w_sc/test.json"
 
     with open(result_file, 'r') as rf:
@@ -226,6 +231,7 @@ def main():
             
             for rp in processed_reasoning_paths:
                 if 'answer' in rp[-1].keys() and 'answer' == None:
+                    print("here")
                     print(problem_and_answer['problem'])
                     
             score = problem_and_answer["score"]
@@ -241,11 +247,11 @@ def main():
 
             
     
-    # reasoning_paths_file = './math_cp_reasoning_paths.json'
+    reasoning_paths_file = './math_cp_reasoning_paths.json'
     # reasoning_paths_file = './math_nt_reasoning_paths.json'
 
-    # with open(reasoning_paths_file, 'w') as wf:
-    #     json.dump(reasoning_paths_dict, wf, indent=4)
+    with open(reasoning_paths_file, 'w') as wf:
+        json.dump(reasoning_paths_dict, wf, indent=4)
     
 
 
