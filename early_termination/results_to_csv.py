@@ -56,11 +56,12 @@ def main(args):
                 row = [values[key] for key in ['acc', 'roc_auc', 'precision', 'recall', 'npv', 'spec']]
                 writer.writerow(row)
 
-        writer.writerow('F')
-        for k, values in result_dict['F'].items():
-            row = [values[key] for key in ['acc', 'roc_auc', 'precision', 'recall', 'npv', 'spec']]
-            writer.writerow(row)
-        
+        if 'F' in result_dict.keys():
+            writer.writerow('F')
+            for k, values in result_dict['F'].items():
+                row = [values[key] for key in ['acc', 'roc_auc', 'precision', 'recall', 'npv', 'spec']]
+                writer.writerow(row)
+            
         writer.writerow('FA')
 
         for k, values in result_dict['FA'].items():
